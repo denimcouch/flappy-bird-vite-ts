@@ -411,6 +411,12 @@ export class Game extends Scene {
         this.flap();
       }
     });
+    this.input.keyboard?.once('keydown-SPACE', () => {
+      if (!this.isGameStarted) {
+        this.isGameStarted = true;
+        this.flap();
+      }
+    });
   }
 
   update(_time: number, delta: number): void {
